@@ -6,8 +6,10 @@ const cards = (shows) => {
   shows.forEach((show) => {
     const inner = `
         <li class = "show-card">
-          <p class = "show-name">${show.name}</p>
+          <h2 class = "show-name">${show.name}</h2>
           <img class= "show-img" src="${show.image.original}" />
+          <button class="comment-btn">Comment</button>
+          <button class="reserve-btn">Reserve</button>
         </li>
       `;
     cards.innerHTML += inner;
@@ -17,7 +19,7 @@ const cards = (shows) => {
 const getShows = async () => {
   const response = await fetch("https://api.tvmaze.com/shows");
   const jsonObj = await response.json();
-  const result = jsonObj.slice(0, 10);
+  const result = jsonObj.slice(0, 12);
   cards(result);
 };
 
