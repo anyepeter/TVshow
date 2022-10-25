@@ -1,14 +1,24 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-Header{
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+header {
   width: 100%;
   height: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: silver;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
 }
