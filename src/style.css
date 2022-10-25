@@ -22,3 +22,8 @@ header {
   width: 100%;
   text-align: center;
 }
+
+.show-img {
+  width: 150px;
+  height: 200px;
+}
