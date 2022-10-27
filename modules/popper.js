@@ -13,7 +13,7 @@ const modalCard = (show) => {
         <p class="summary">${show.summary}</p>
       </div>
       <div class="flex column res-div">
-        <h3 class="sub">Reservations <span class="tint"></span></h3>
+        <h3 class="sub">Reservations <span class="tint">0</span></h3>
         <ul class="list">
           <!-- contents for reservation lists -->
         </ul>

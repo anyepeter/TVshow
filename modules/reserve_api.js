@@ -1,7 +1,7 @@
 import sendApi from './sendApi.js';
 
 // Helper funtion that itemize reserved dates and other info
-const displayViews = (book) => {
+const displayViews = async (book) => {
   const going = document.querySelector('.list');
   if (book.length >= 2) {
     book.forEach((viewing) => {
@@ -9,10 +9,8 @@ const displayViews = (book) => {
         <li>${viewing.date_start} - ${viewing.date_end} by ${viewing.username}</li>
       `;
     });
-  } else if (book.length === 2) {
+  } else {
     going.innerHTML += `<li>${book.date_start} - ${book.date_end} by ${book.username}</li>`;
-  } else if (book.length === '') {
-    going.innerHTML += '<li>Oops, it will be uploaded shortly! &#128552;</li>';
   }
   return going;
 };
@@ -20,7 +18,12 @@ const displayViews = (book) => {
 /* eslint-disable camelcase */
 class ReservationApi {
   static getApi = async (id) => {
-    const booked = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5zFxK869JkpdF8DXWL2N/reservations?item_id=${id}`);
+    let booked;
+    try {
+      booked = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/S8jUmAbkqmXOnp8cwdYb/reservations?item_id=${id}`);
+    } catch {
+      booked = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/S8jUmAbkqmXOnp8cwdYb/reservations?item_id=${id}`);
+    }
     return booked;
   };
 
@@ -38,14 +41,14 @@ class ReservationApi {
       date_end,
     };
 
-    sendApi('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5zFxK869JkpdF8DXWL2N/reservations/', visitor);
+    sendApi('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/S8jUmAbkqmXOnp8cwdYb/reservations/', visitor);
     document.querySelector('form').reset();
   };
 
-  static updateDOM = (packet) => {
+  static updateDOM = async (packet) => {
     const counter = packet.length;
-    displayViews(packet);
-    document.querySelector('.tint').innerHTML += counter;
+    setInterval(displayViews(packet), 2000);
+    document.querySelector('.tint').innerHTML = await counter;
   }
 }
 

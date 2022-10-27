@@ -160,16 +160,14 @@ button.url:hover {
 }
 
 .tint {
-  position: absolute;
+  position: relative;
   top: -10px;
-  left: 125px;
+  left: 3px;
   color: white;
   background-color: rgb(51, 51, 51, 0.6);
-  padding: 0.5rem 0.8rem;
+  padding: 0.5rem 0.7rem;
   border-radius: 50%;
   font-size: 1rem;
-  width: 30px;
-  height: 30px;
 }
 
 .form {
@@ -180,7 +178,6 @@ button.url:hover {
 }
 
 .sub {
-  position: relative;
   margin-right: 0.5rem;
   margin-top: 2rem;
 }
