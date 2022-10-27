@@ -19,9 +19,31 @@ const getShows = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const jsonObj = await response.json();
   const result = jsonObj.slice(0, 12);
-  cards(result);
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tusUKotsqFxCymui6qpz/likes')
+  .then((res) => res.json())
+  .then((data) => {
+    //console.log(data);
+    cards(result, data);
+  });
+  
   popInfo(result);
   showss(result);
 };
+const uniqueID = 'tusUKotsqFxCymui6qpz';
+
+const postLikes = async (id) => {
+  const data = {
+    item_id: id,
+  };
+  const post = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  };
+  await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tusUKotsqFxCymui6qpz/likes', post);
+}
+
 
 document.addEventListener('DOMContentLoaded', getShows);
