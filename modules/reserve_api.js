@@ -3,16 +3,16 @@ import sendApi from './sendApi.js';
 // Helper funtion that itemize reserved dates and other info
 const displayViews = (book) => {
   const going = document.querySelector('.list');
-  if (book.length > 1) {
+  if (book.length >= 2) {
     book.forEach((viewing) => {
       going.innerHTML += `
         <li>${viewing.date_start} - ${viewing.date_end} by ${viewing.username}</li>
       `;
     });
-  } else {
-    going.innerHTML += `
-    <li>${book.date_start} - ${book.date_end} by ${book.username}</li>
-  `;
+  } else if (book.length === 2) {
+    going.innerHTML += `<li>${book.date_start} - ${book.date_end} by ${book.username}</li>`;
+  } else if (book.length === '') {
+    going.innerHTML += '<li>Oops, it will be uploaded shortly! &#128552;</li>';
   }
   return going;
 };
