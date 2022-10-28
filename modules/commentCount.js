@@ -1,6 +1,3 @@
+const comentCount = (data) => data.length;
 
-const comentCount = (data) => {
-  return data.length;
-};
-
-module.exports = comentCount
+module.exports = comentCount;
