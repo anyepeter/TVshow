@@ -19,7 +19,7 @@ const getShows = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const jsonObj = await response.json();
   const result = jsonObj.slice(0, 12);
- await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tusUKotsqFxCymui6qpz/likes')
+  await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tusUKotsqFxCymui6qpz/likes')
     .then((res) => res.json())
     .then((data) => {
       cards(result, data);
@@ -28,7 +28,5 @@ const getShows = async () => {
   popInfo(result);
   showss(result);
 };
-
-
 
 document.addEventListener('DOMContentLoaded', getShows);

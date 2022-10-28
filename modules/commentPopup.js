@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import cards from './showList.js';
 
 const body = document.querySelector('body');
@@ -58,7 +58,7 @@ const showss = (man) => {
         e.preventDefault();
         const usernames = user.value;
         const comments = message.value;
-        
+
         if (usernames === '' || comments === '') {
           errorMsg.innerHTML = 'Please enter your username';
           setTimeout(() => {
@@ -84,9 +84,7 @@ const showss = (man) => {
               return response.json();
             }
             return Promise.reject(response);
-          }).then((data) => {
-            return data;
-          });
+          }).then((data) => data);
         } catch (error) {
           return error;
         }
@@ -94,7 +92,7 @@ const showss = (man) => {
         form.reset();
         setTimeout(() => {
           showwpop(id);
-        }, 1000)
+        }, 1000);
       });
 
       const container = document.querySelector('#comment-container');
@@ -124,6 +122,6 @@ const showss = (man) => {
     });
   });
 };
-cards()
+cards();
 
 export default showss;
