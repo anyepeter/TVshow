@@ -2,7 +2,6 @@ import './style.css';
 import modalCard from '../modules/popper.js';
 import showss from '../modules/commentPopup.js';
 import cards from '../modules/showList.js';
-import movieCount from '../modules/movieCount.js';
 
 const popper = document.querySelector('.pop_info');
 
