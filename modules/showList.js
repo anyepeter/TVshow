@@ -1,5 +1,8 @@
 /* eslint-disable */
+import movieCount from './movieCount.js';
 const card = document.querySelector(".cards");
+const counter = document.querySelector('.counter');
+
 const cards = async (shows, likesss) => {
   card.innerHTML = "";
   let inner = "";
@@ -24,6 +27,7 @@ const cards = async (shows, likesss) => {
       thumb.previousElementSibling.textContent =
         `${likesss[index].likes + 1}` + " Likes";
     });
+    counter.innerHTML = `Best TV series (${movieCount(shows)})`;
   });
   const postLikes = async (id) => {
     const data = {

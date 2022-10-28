@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 body {
@@ -27,7 +27,11 @@ header {
   letter-spacing: 10px;
   z-index: 3;
 }
-
+.counter {
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 .logo {
   padding: 0;
   width: 80px;
@@ -113,8 +117,7 @@ header {
   padding-top: 2%;
   padding-bottom: 2%;
   border-radius: 10px;
-  box-shadow:
-    rgb(0 0 0 / 69%) 0 26px 30px -10px,
+  box-shadow: rgb(0 0 0 / 69%) 0 26px 30px -10px,
     rgb(0 0 0 / 73%) 0 16px 10px -10px;
   cursor: pointer;
   overflow: hidden;
@@ -140,8 +143,7 @@ header {
 }
 
 .show-card:hover {
-  box-shadow:
-    rgb(0 0 0 / 80%) 0 40px 58px -16px,
+  box-shadow: rgb(0 0 0 / 80%) 0 40px 58px -16px,
     rgb(0 0 0 / 72%) 0 30px 22px -10px;
   transform: scaleX(1.05);
   border-color: rgba(249, 249, 249, 0.8);
@@ -150,6 +152,8 @@ header {
 .show-card h2 {
   padding-left: 25%;
   color: white;
+  font-size: 15px;
+  padding-bottom: 8%;
 }
 
 .pop_info {
