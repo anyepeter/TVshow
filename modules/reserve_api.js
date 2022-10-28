@@ -3,6 +3,7 @@ import sendApi from './sendApi.js';
 // Helper funtion that itemize reserved dates and other info
 const displayViews = async (book) => {
   const going = document.querySelector('.list');
+  going.innerHTML = '';
   if (book.length >= 2) {
     book.forEach((viewing) => {
       going.innerHTML += `
@@ -10,7 +11,7 @@ const displayViews = async (book) => {
       `;
     });
   } else {
-    going.innerHTML += `<li>${book.date_start} - ${book.date_end} by ${book.username}</li>`;
+    going.innerHTML += `<li>${book[0].date_start} - ${book[0].date_end} by ${book[0].username}</li>`;
   }
   return going;
 };
@@ -47,7 +48,7 @@ class ReservationApi {
 
   static updateDOM = async (packet) => {
     const counter = packet.length;
-    setInterval(displayViews(packet), 2000);
+    displayViews(packet);
     document.querySelector('.tint').innerHTML = await counter;
   }
 }

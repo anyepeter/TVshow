@@ -34,9 +34,13 @@ const modalCard = (show) => {
     e.preventDefault();
     ReservationApi.getInputs(e.target.parentElement.id);
 
-    ReservationApi.getApi(e.target.parentElement.id)
-      .then((res) => res.json())
-      .then((data) => ReservationApi.updateDOM(data));
+    const callback = (event) => {
+      ReservationApi.getApi(event)
+        .then((res) => res.json())
+        .then((data) => ReservationApi.updateDOM(data));
+    };
+    callback(e.target.parentElement.id);
+    callback(e.target.parentElement.id);
   });
 };
 
