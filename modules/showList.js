@@ -1,8 +1,8 @@
 /* eslint-disable */
-const card = document.querySelector('.cards');
+const card = document.querySelector(".cards");
 const cards = async (shows, likesss) => {
-  card.innerHTML = '';
-  let inner = '';
+  card.innerHTML = "";
+  let inner = "";
   shows.forEach((show, index) => {
     inner += `
         <li class = "show-card" id="${show.id - 1}" >
@@ -17,11 +17,12 @@ const cards = async (shows, likesss) => {
       `;
   });
   card.innerHTML = inner;
-  const addLikes = document.querySelectorAll('.like-btn');
+  const addLikes = document.querySelectorAll(".like-btn");
   addLikes.forEach((thumb, index) => {
-    thumb.addEventListener('click', () => {
+    thumb.addEventListener("click", () => {
       postLikes(likesss[index].item_id);
-      thumb.previousElementSibling.textContent = `${likesss[index].likes + 1}` + ' Likes';
+      thumb.previousElementSibling.textContent =
+        `${likesss[index].likes + 1}` + " Likes";
     });
   });
   const postLikes = async (id) => {
@@ -29,15 +30,15 @@ const cards = async (shows, likesss) => {
       item_id: id,
     };
     const post = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     };
     await fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tusUKotsqFxCymui6qpz/likes',
-      post,
+      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tusUKotsqFxCymui6qpz/likes",
+      post
     );
   };
 };
