@@ -1,5 +1,7 @@
 import sendApi from './sendApi.js';
 
+const counter = require('./reservation_counter.js');
+
 // Helper funtion that itemize reserved dates and other info
 const displayViews = async (book) => {
   const going = document.querySelector('.list');
@@ -47,9 +49,9 @@ class ReservationApi {
   };
 
   static updateDOM = async (packet) => {
-    const counter = packet.length;
+    const viewers = counter(packet);
     displayViews(packet);
-    document.querySelector('.tint').innerHTML = await counter;
+    document.querySelector('.tint').innerHTML = await viewers;
   }
 }
 
