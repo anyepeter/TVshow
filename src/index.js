@@ -19,17 +19,15 @@ const getShows = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const jsonObj = await response.json();
   const result = jsonObj.slice(0, 12);
-  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tusUKotsqFxCymui6qpz/likes')
+ await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tusUKotsqFxCymui6qpz/likes')
     .then((res) => res.json())
     .then((data) => {
-    // console.log(data);
       cards(result, data);
     });
 
   popInfo(result);
   showss(result);
 };
-//const uniqueID = 'tusUKotsqFxCymui6qpz';
 
 
 

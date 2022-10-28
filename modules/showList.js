@@ -1,6 +1,5 @@
 const card = document.querySelector(".cards");
 const cards = async (shows, likesss) => {
-  likesss = likesss.sort((a, b) => a.item_id - b.item_id);
   card.innerHTML = "";
   let inner = "";
   shows.forEach((show, index) => {
@@ -15,8 +14,7 @@ const cards = async (shows, likesss) => {
           <button class="reserve-btn">Reserve</button>
         </li>
       `;
-    console.log(likesss[index].item_id);
-    // console.log((likesss.item_id===index)?likesss[index].likes:false);
+    
   });
   card.innerHTML = inner;
   const addLikes = document.querySelectorAll(".like-btn");
