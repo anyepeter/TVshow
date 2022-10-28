@@ -39,8 +39,13 @@ header {
   padding: 0;
   width: 80px;
   margin-top: 4px;
-  max-height: 70px;
+  max-height: 100px;
   display: inline-block;
+}
+
+.logoIcon{
+  width: 6rem;
+  height: 4.5rem;
 }
 
 .navMenu {
