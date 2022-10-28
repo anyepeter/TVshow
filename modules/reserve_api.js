@@ -1,4 +1,5 @@
 import sendApi from './sendApi.js';
+
 const counter = require('./reservation_counter.js');
 
 // Helper funtion that itemize reserved dates and other info
