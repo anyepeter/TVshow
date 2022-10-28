@@ -54,7 +54,7 @@ Track HTML linter errors run:
 <code>
  npx hint .
   </code>
-npx hint .
+  
 Track CSS linter errors run:
 
 <code>
