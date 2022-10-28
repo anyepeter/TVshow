@@ -1,6 +1,6 @@
 import './style.css';
 import modalCard from '../modules/popper.js';
-import showss from '../modules/commentPopup.js';
+import commentItems from '../modules/commentPopup.js';
 import cards from '../modules/showList.js';
 
 const popper = document.querySelector('.pop_info');
@@ -26,7 +26,7 @@ const getShows = async () => {
     });
 
   popInfo(result);
-  showss(result);
+  commentItems(result);
 };
 
 document.addEventListener('DOMContentLoaded', getShows);

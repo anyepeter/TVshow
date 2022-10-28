@@ -1,51 +1,47 @@
 /* eslint-disable */
 import cards from './showList.js';
 
-const body = document.querySelector('body');
-const card = document.querySelector('.cards');
-const pupo = document.createElement('section');
-pupo.classList = 'comment-popup';
-pupo.classList = 'active';
+const card = document.querySelector('.main');
+const commentEl = document.querySelector('.comment-popup');
 
-const showss = (man) => {
+const commentItems = (commentObject) => {
   const buttons = document.querySelectorAll('.comment-btn');
   buttons.forEach(async (items, index) => {
     items.addEventListener('click', async () => {
-      const presentButton = man.find((sho) => sho.id === index + 1);
+      const presentButton = commentObject.find((sho) => sho.id === index + 1);
       card.classList.add('active');
-      //  const pupo = document.querySelector('.popup')
+      
       const content = `
 
-    <div class="pop-card flex column">
-      <div class="img-div flex">
-        <img src="${presentButton.image.original}" alt="Movie flyer" class="pop-img">
-        <i class="material-icons close">&#xe5c9;</i>
+    <div class="comment-section">
+    <i class="bi bi-x-lg closeBtn"></i>
+      <div class="image-section">
+        <img src="${presentButton.image.original}" alt="Movie flyer">
       </div>
-      <div class="card_info flex column">
-        <h2 class="movie-title" title="${presentButton.name}">${presentButton.name}</h2>
+      <div class="description-section">
+        <h2 >${presentButton.name}</h2>
         <p class="summary">${presentButton.summary}</p>
       </div>
-      <p>Comment(<span id="commentSection">0</span>)</p>
-      <ul id="comment-container">
+      <p class="comment-title">Comments(<span id="commentSection">0</span>)</p>
+      <ul id="comment-container" class="comment-container">
       </ul>
-      <form>
-             <p>User Name
+      <form class="form-comment">
+             <p>
              <input type="text" id="username" placeholder="Enter user name">
              </p>
-             <p>User Name
-             <input type="text" id="message" placeholder="Enter your comments">
+             <p>
+             <input class="textarea" type="text" id="message" placeholder="Enter your comments">
              </p>
-             <button type="submit">Click</button>
+             <p><button type="submit">Submit</button></p>
              <span id="error"></span>
       </form>
     </div>
      `;
-      pupo.innerHTML = content;
-      body.appendChild(pupo);
-      pupo.classList.remove('active');
-      const close = document.querySelector('.close');
+      commentEl.innerHTML = content;
+      commentEl.classList.remove('active');
+      const close = document.querySelector('.closeBtn');
       close.addEventListener('click', () => {
-        pupo.classList.add('active');
+        commentEl.classList.add('active');
         card.classList.remove('active');
       });
       const user = document.getElementById('username');
@@ -64,8 +60,8 @@ const showss = (man) => {
           setTimeout(() => {
             errorMsg.innerHTML = ' ';
           }, 2000);
-        }
-
+        } else {
+          
         try {
           const api = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OBkwF2aqUCliQK0tc1AI/comments';
 
@@ -91,20 +87,22 @@ const showss = (man) => {
 
         form.reset();
         setTimeout(() => {
-          showwpop(id);
+          ShowPopup(id);
         }, 1000);
-      });
 
+      };
+      });
+    
       const container = document.querySelector('#comment-container');
-      const showwpop = async (id) => {
+      const ShowPopup = async (id) => {
         await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OBkwF2aqUCliQK0tc1AI/comments?item_id=${id}`).then((response) => response.json()).then((data) => {
           let markup = '';
-          data.forEach((elem) => {
+          data.forEach((elem, index) => {
             markup += `
-          <li>
-          <p>${elem.creation_date}</p>
-          <P>${elem.username}</P>
-          <p>${elem.comment}</p>
+          <li style="background-color: ${index % 2 && 'rgb(191, 4, 23)'}">
+          <p>${elem.creation_date}:</p>
+          <h3>${elem.username}</h3>
+          <p>" ${elem.comment} ".</p>
           </li>
           `;
           });
@@ -118,10 +116,11 @@ const showss = (man) => {
         });
       };
 
-      showwpop(id);
+      ShowPopup(id);
     });
   });
-};
+}
+
 cards();
 
-export default showss;
+export default commentItems;
