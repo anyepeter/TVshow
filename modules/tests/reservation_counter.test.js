@@ -18,13 +18,12 @@ const viewers = [
   },
 ];
 
-const users = []
+const users = [];
 
-// the lenght of the array should be zero 
+// the lenght of the array should be zero
 test('test the number of reservations made should be zero', () => {
   expect(interest(users)).toBe(0);
 });
-
 
 test('test the number of reservations made', () => {
   expect(interest(viewers)).toBe(3);

@@ -12,7 +12,7 @@ const object = [
   },
 ];
 
-const odjTwo = []
+const odjTwo = [];
 // The lenght of the array should be equal to 3
 test('test the length of an array', () => {
   expect(movieCount(object)).toBe(3);
