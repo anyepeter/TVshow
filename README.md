@@ -18,7 +18,8 @@ This application was built using the following technologies;
   - jest
 - Technologies used
   - API(Appiication programming interface)
-
+ ## Video 
+ Here is the [video](https://drive.google.com/file/d/1ox9mEKwHrmbL3Xon5S0iVgCyfKb7MPDf/view?usp=drivesdk) of how the system work explained by us.
 
 ## Getting Started
 
