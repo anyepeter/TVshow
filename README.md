@@ -78,19 +78,19 @@ npm test
 
 ## Authors
 
-👤 **Author1**
+👤 **Abel Seifu**
 
 - GitHub: [Abe1able](https://github.com/Abe1able)
 - Twitter: [@abelseifu15](https://twitter.com/abelseifu15)
 - LinkedIn: [Abe1able](https://www.linkedin.com/feed/)
 
-👤 **Author2**
+👤 **Peter Chendi**
 
 - GitHub: [anyepeter](https://github.com/githubhandle)
 - Twitter: [@apcode](https://twitter.com/twitterhandle)
 - LinkedIn: [PeterChendi](https://www.linkedin.com/in/peter-chendi-83978a220/)
 
-👤 **Author3*
+👤 **Abayomi Olaoye**
 
 - GitHub: [AbayomiOlaoye](https://github.com/AbayomiOlaoye)
 - Twitter: [@olaoyeelijah](https://twitter.com/twitterhandle)
