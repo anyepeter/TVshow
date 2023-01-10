@@ -2,7 +2,7 @@
 
 # TV show -APi(NIGHT SHOW)
 
-> We created an application called Night show in which a user can comment, like and reserve a movie from a list of movies using an API. This is our second Capstone project in Microverse.
+ We created an application called Night show in which a user can comment, like and reserve a movie from a list of movies using an API. This is our second Capstone project in Microverse.
 
 <img width="500" src="https://media.giphy.com/media/3AUWMhVZSwY5j4CWUl/giphy.gif">
 
