@@ -12,7 +12,7 @@ This application was built using the following technologies;
 - Major languages
   - TML.
   - SS.
-  - avaScript.
+  - javascript.
 - Frameworks
   - Webpack
   - jest
